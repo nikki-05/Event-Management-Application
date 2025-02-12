@@ -64,29 +64,6 @@ PORT=5000
 ```
 
 
-## 📦 **Deployment**
-The project is deployed using **Vercel**.  
-### **Frontend Deployment**
-```sh
-vercel --prod
-```
-### **Backend Deployment (Free Hosting)**
-Use **Render** or **Railway** for backend hosting.
-
----
-
-## 📸 **Screenshots**
-### **Homepage**
-![Homepage](public/assets/homepage_screenshot.png)
-### **Create Event Page**
-![Create Event](public/assets/create_event_screenshot.png)
-
----
-
-## 📜 **License**
-This project is **open-source** and available under the MIT License.
-
----
 
 ## 🤝 **Contributing**
 Want to improve this project?  
