@@ -4,9 +4,8 @@ import axios from "axios";
 import "../styles.css";
 
 function Login() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("sampleuser@example.com");
+  const [password, setPassword] = useState("Sample@123");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -30,11 +29,13 @@ function Login() {
         />
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
-          <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} required />
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit">Login</button>
         </form>
+        <p>Use sample credentials:</p>
+        <p><strong>Email:</strong> sampleuser@example.com</p>
+        <p><strong>Password:</strong> Sample@123</p>
       </div>
     </div>
   );

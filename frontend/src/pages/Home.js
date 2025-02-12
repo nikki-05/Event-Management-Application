@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import axios from "axios";
 
 function Home() {
   const [events, setEvents] = useState([]);
   const [filter, setFilter] = useState("all");
   const navigate = useNavigate();
+  const location = useLocation(); // Get passed state
 
   useEffect(() => {
     fetchEvents();
   }, []);
+
+  useEffect(() => {
+    if (location.state?.newEvent) {
+      setEvents((prevEvents) => [...prevEvents, location.state.newEvent]); // Add new event
+      window.history.replaceState({}, document.title); // Clear state to prevent duplicate additions
+    }
+  }, [location.state]);
 
   const fetchEvents = async () => {
     try {
@@ -18,10 +26,6 @@ function Home() {
     } catch (err) {
       console.error("Error fetching events:", err);
     }
-  };
-
-  const handleEventCreated = (newEvent) => {
-    setEvents((prevEvents) => [...prevEvents, newEvent]);
   };
 
   const filteredEvents = events.filter((event) => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles.css"; // Make sure your CSS file is imported
+import "../CreateEvent.css"; // Import external CSS for cleaner code
 
 function CreateEvent() {
   const [eventData, setEventData] = useState({
@@ -19,13 +19,22 @@ function CreateEvent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/events", eventData);
+      const token = localStorage.getItem("token");
+  
+      const res = await axios.post("http://localhost:5000/api/events", eventData, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+  
       console.log("Event created:", res.data);
-      navigate("/"); // Redirect to Home page after event creation
+  
+      // Navigate to home and pass new event
+      navigate("/", { state: { newEvent: res.data } });
     } catch (err) {
-      console.error("Error creating event:", err);
+      console.error("Error creating event:", err.response?.data || err);
+      alert("Failed to create event. Please try again.");
     }
   };
+  
 
   return (
     <div className="create-event-container">
