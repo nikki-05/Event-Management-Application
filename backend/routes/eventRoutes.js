@@ -4,24 +4,29 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// Create Event
-router.post("/", authMiddleware, async (req, res) => {
+/router.get("/", async (req, res) => {
   try {
-    const { title, description, date, category } = req.body;
-    const event = await Event.create({ title, description, date, category, createdBy: req.user.id });
-    res.status(201).json(event);
+    const events = await Event.find();
+    res.json(events);
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({ error: "Server error" });
   }
 });
 
-// Get All Events
-router.get("/", async (req, res) => {
+// Create a new event
+router.post("/", async (req, res) => {
+  const { name, description, date } = req.body;
+
+  if (!name || !description || !date) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
   try {
-    const events = await Event.find().populate("createdBy", "name");
-    res.json(events);
+    const newEvent = new Event({ name, description, date });
+    await newEvent.save();
+    res.status(201).json(newEvent);
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({ error: "Server error" });
   }
 });
 

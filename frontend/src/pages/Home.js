@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles.css";
 
 function Home() {
   const [events, setEvents] = useState([]);
@@ -19,6 +18,10 @@ function Home() {
     } catch (err) {
       console.error("Error fetching events:", err);
     }
+  };
+
+  const handleEventCreated = (newEvent) => {
+    setEvents((prevEvents) => [...prevEvents, newEvent]);
   };
 
   const filteredEvents = events.filter((event) => {
