@@ -154,6 +154,226 @@ body, html {
 .login-container button:hover {
     color: yellow;
 }
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    color: rgb(0, 0, 0);
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+.create-event-btn {
+    padding: 12px 20px;
+    background: #600b26;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.create-event-btn:hover {
+    background: #e64a19;
+}
+
+/* Event Section */
+.event-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(255, 202, 233, 0.9);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.filter-buttons button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: #5c0822;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+    color:yellow
+}
+
+/* Event Cards */
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.event-card {
+    background: rgb(248, 190, 226);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+}
+
+.event-card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: #666;
+}
+/* About Page Styles */
+.about-container {
+    background: url('https://img.freepik.com/free-vector/social-life-concept-illustration_114360-1851.jpg?t=st=1739368637~exp=1739372237~hmac=9fc097bd8e8613dd409b9bc3c531826fddf482350cd8fb0f2b12b505091a4429&w=740') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-content h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    color: #222;
+    margin-top: 20px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-size: 18px;
+    color: #444;
+    padding: 8px 0;
+}
+
+.about-content a {
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-content a:hover {
+    text-decoration: underline;
+}
+/* Contact Page Styles */
+.contact-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    background-color: #f9f9f9; /* Light background */
+}
+
+.contact-form {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #600818;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #600818;
+}
+
+/* Floating Image Style */
+.floating-image {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.floating-image:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
