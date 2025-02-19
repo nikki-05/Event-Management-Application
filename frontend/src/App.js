@@ -21,7 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/create-event" element={<CreateEvent onEventCreated={handleEventCreated} />} />
+        <Route path="/create-event" element={<CreateEvent />} />
       </Routes>
     </Router>
   );
